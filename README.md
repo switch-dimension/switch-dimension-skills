@@ -10,7 +10,7 @@ npx skills add switch-dimension/switch-dimension-skills
 
 ## Available Skills
 
-*(Add your skills here as you create them.)*
+- **project-log** — Ensures a `.docs` folder exists, creates `project-log.md`, and records current project status for handoff. Use when ending a session, handing off, or saving project state.
 
 ## Creating & Sharing Skills
 
