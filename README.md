@@ -5,10 +5,8 @@ A collection of agent skills for [skills.sh](https://skills.sh)—reusable capab
 ## Installation
 
 ```bash
-npx skills add robshocks/switch-dimension-skills
+npx skills add switch-dimension/switch-dimension-skills
 ```
-
-*(Replace `robshocks` with your GitHub username after pushing to your repo.)*
 
 ## Available Skills
 
