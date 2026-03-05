@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "skills": {
+    "project-log": {
+      "source": "switch-dimension/switch-dimension-skills",
+      "sourceType": "github",
+      "computedHash": "b0569d17dcf4ce8756fcc2092ef2295cc6057062b06b0034021f11915f25d7a4"
+    }
+  }
+}
