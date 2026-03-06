@@ -1,5 +1,5 @@
 ---
-name: log-doctor
+name: check-logs
 description: Diagnose errors from dev server logs (Next.js, Vite, etc.) and fix them. Use this skill whenever the user mentions checking logs, server errors, terminal errors, build failures, or asks things like "why is my server crashing", "check my logs", "what's this error", "fix the build error", "the dev server is broken", "something's wrong with my app", "check the terminal", "I'm getting an error", or "debug the server output". Also trigger when the user asks you to monitor running tasks for errors, review background task output, or wants help understanding any error in terminal or task logs — even if they don't say "logs" explicitly.
 metadata:
   author: switch-dimension
