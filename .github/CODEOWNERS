@@ -3,19 +3,19 @@
 # Update the username below to the GitHub handle of the designated owner.
 
 # Global fallback - all files require review from the designated owner
-* @robshocks
+* @robshox
 
 # Skills directory - all skill additions/modifications
-/skills/ @robshocks
+/skills/ @robshox
 
 # GitHub configuration changes (workflows, templates, etc.)
-/.github/ @robshocks
+/.github/ @robshox
 
 # Scripts used for CI/security scanning
-/scripts/ @robshocks
+/scripts/ @robshox
 
 # Documentation and policy files
-/SECURITY.md @robshocks
-/CONTRIBUTING.md @robshocks
-/README.md @robshocks
-/SKILLS_WORKFLOW_GUIDE.md @robshocks
+/SECURITY.md @robshox
+/CONTRIBUTING.md @robshox
+/README.md @robshox
+/SKILLS_WORKFLOW_GUIDE.md @robshox
