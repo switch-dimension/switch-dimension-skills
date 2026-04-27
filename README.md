@@ -12,17 +12,28 @@ npx skills add switch-dimension/switch-dimension-skills
 
 - **project-log** — Ensures a `.docs` folder exists, creates `project-log.md`, and records current project status for handoff. Use when ending a session, handing off, or saving project state.
 
-## Recommended Skills from Other Providers
+## Third-Party Skills
 
-Skills from other providers that complement this collection:
+To maintain security, **all skills must be installed from this repository only**. External skills require review before use.
 
+### Using External Skills
 
-| Provider                                 | Skill | Description |
-| ---------------------------------------- | ----- | ----------- |
-| *Add skills as you discover useful ones* |       |             |
+If you want to use a skill from another provider:
 
+1. **Fork or copy the skill** into this repository via a Pull Request
+2. **Security review** — The skill undergoes automated and manual review
+3. **Install from this repo** after merge:
+   ```bash
+   npx skills add switch-dimension/switch-dimension-skills --skill skill-name
+   ```
 
-npx skills add [https://github.com/clerk/skills](https://github.com/clerk/skills) --skill clerk-nextjs-patterns 
+### Approved External Skills
+
+| Provider | Skill | Description | Status |
+|----------|-------|-------------|--------|
+| *Submit PR to add external skills* | | | |
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for the import process.
 
 ## Creating & Sharing Skills
 

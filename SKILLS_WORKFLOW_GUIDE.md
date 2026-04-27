@@ -155,10 +155,27 @@ Anyone can install with:
 npx skills add your-username/switch-dimension-skills
 ```
 
-### 5. Optional: Add to skills.sh discoverability
+### 5. Submit via Pull Request
 
-- Skills appear on the leaderboard automatically when users install
-- Ensure your repo has a clear README with install instructions
+This repository requires all changes to go through review:
+
+1. **Push your branch** to GitHub:
+   ```bash
+   git push -u origin feat/my-first-skill
+   ```
+
+2. **Open a Pull Request** against `main`
+   - The PR template will guide you through security checks
+   - Automated CI will validate your skill (secret scanning, linting, format checks)
+   - The designated owner will review and approve
+
+3. **Merge** once approved and all checks pass
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed contribution guidelines.
+
+### 6. Discovery
+
+- Skills appear on [skills.sh](https://skills.sh) automatically when users install
 - Good descriptions in SKILL.md help users find you via search on skills.sh
 
 ---
@@ -212,5 +229,20 @@ Your workspace `switch-dimension-skills` is ready to become a skills repo. Recom
 1. Initialize git and create a GitHub repo (public or private)
 2. Add a `skills/` folder with your first skill
 3. Add a README with install instructions
-4. Optionally migrate skills from `~/.cursor/skills` or `~/.codex/skills` into this repo
-5. Share the install command with your team or community
+4. Optionally migrate skills from `~/.cursor/skills/` or `~/.codex/skills/` into this repo
+5. **Review governance documentation:**
+   - [CONTRIBUTING.md](./CONTRIBUTING.md) — How to submit skills via PR
+   - [SECURITY.md](./SECURITY.md) — Security policy and installation guidelines
+   - [.github/GITHUB_SETTINGS_SETUP.md](./.github/GITHUB_SETTINGS_SETUP.md) — Branch protection setup
+6. Share the install command with your team or community
+
+## Repository Governance
+
+This repository uses a security-first approach:
+
+- **CODEOWNERS** — All changes require review from the designated owner
+- **Branch protection** — No direct pushes to `main`; all changes via PR
+- **Automated security scanning** — Every PR is checked for secrets and unsafe patterns
+- **Skill validation** — Automated linting ensures SKILL.md format compliance
+
+See the linked documents above for full details.
