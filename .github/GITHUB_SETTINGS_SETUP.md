@@ -11,18 +11,18 @@ Apply to: `main`
 ### Protection Settings
 
 
-| Setting                                                | Value                                  | Notes                               |
-| ------------------------------------------------------ | -------------------------------------- | ----------------------------------- |
-| Require a pull request before merging                  | ✅ Enabled                              | All changes must go through PR      |
-| Require approvals                                      | 1                                      | Minimum 1 approval required         |
-| Require review from Code Owners                        | ✅ Enabled                              | Enforces CODEOWNERS file            |
-| Dismiss stale PR approvals when new commits are pushed | ✅ Enabled                              | Ensures fresh review after changes  |
-| Require conversation resolution before merging         | ✅ Enabled                              | All review threads must be resolved |
-| Require status checks to pass before merging           | ✅ Enabled                              | CI must pass                        |
-| Required checks                                        | `Secret Detection`, `Static Analysis`, `Skill Validation` | As defined by job names in security.yml |
-| Require branches to be up to date before merging       | ✅ Recommended                          | Prevents conflicts                  |
-| Do not allow bypassing the above settings              | ❌ Disabled                             | Allows the designated owner/admin to bypass when merging their own maintenance PRs |
-| Restrict who can push to matching branches             | Optional                               | Can restrict to specific users      |
+| Setting                                                | Value                                                     | Notes                                                                              |
+| ------------------------------------------------------ | --------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| Require a pull request before merging                  | ✅ Enabled                                                 | All changes must go through PR                                                     |
+| Require approvals                                      | 1                                                         | Minimum 1 approval required                                                        |
+| Require review from Code Owners                        | ✅ Enabled                                                 | Enforces CODEOWNERS file                                                           |
+| Dismiss stale PR approvals when new commits are pushed | ✅ Enabled                                                 | Ensures fresh review after changes                                                 |
+| Require conversation resolution before merging         | ✅ Enabled                                                 | All review threads must be resolved                                                |
+| Require status checks to pass before merging           | ✅ Enabled                                                 | CI must pass                                                                       |
+| Required checks                                        | `Secret Detection`, `Static Analysis`, `Skill Validation` | As defined by job names in security.yml                                            |
+| Require branches to be up to date before merging       | ✅ Recommended                                             | Prevents conflicts                                                                 |
+| Do not allow bypassing the above settings              | ❌ Disabled                                                | Allows the designated owner/admin to bypass when merging their own maintenance PRs |
+| Restrict who can push to matching branches             | Optional                                                  | Can restrict to specific users                                                     |
 
 
 ### Save the rule

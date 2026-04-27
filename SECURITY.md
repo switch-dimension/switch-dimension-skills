@@ -26,7 +26,8 @@ To maintain security and consistency across the organization:
    npx skills add switch-dimension/switch-dimension-skills
   ```
 2. **Do not install skills directly from external repositories**. If a third-party skill is needed:
-  - Fork or copy the skill into this repository via a Pull Request
+  - Import it with `npm run skills:propose -- skill-name` or `npm run skills:propose -- owner/skill-repo --skill skill-name`
+  - Review the Pull Request opened by the CLI
   - The skill must pass security review before merging
   - Once merged, install from this repo
 3. **Verify the source** after installation by checking `skills-lock.json`:

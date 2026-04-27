@@ -16,6 +16,8 @@ Use the in-repo CLI to discover and install approved company skills:
 npm run skills:list
 npm run skills:info -- project-log
 npm run skills:install -- project-log
+npm run skills:propose -- my-skill
+npm run skills:propose -- ~/work/my-skill-repo --skill my-skill
 ```
 
 The CLI supports private repositories through the GitHub CLI when reading remote metadata:
@@ -25,6 +27,8 @@ gh auth login
 npm run skills:list -- --remote
 ```
 
+Proposal PR creation also requires `gh auth login`.
+
 Available commands:
 
 - `sd-skills list` — list approved skills with version and description
@@ -32,6 +36,7 @@ Available commands:
 - `sd-skills install <skill>` — install one approved skill with `npx skills`
 - `sd-skills install --all` — install every approved skill
 - `sd-skills install <skill> --dry-run` — print the install command without running it
+- `sd-skills propose <source>` — clone the official skills repo, import an external skill, validate it, push to the official repo or a fork, open a PR, and clean up the temporary checkout
 
 ## Available Skills
 
@@ -47,9 +52,14 @@ To maintain security, **all skills must be installed from this repository only**
 
 If you want to use a skill from another provider:
 
-1. **Fork or copy the skill** into this repository via a Pull Request
-2. **Security review** — The skill undergoes automated and manual review
-3. **Install from this repo** after merge:
+1. **Import the skill for review**:
+  ```bash
+   npm run skills:propose -- skill-name
+   npm run skills:propose -- owner/skill-repo --skill skill-name
+  ```
+2. **Review the Pull Request** opened by the CLI
+3. **Security review** — The skill undergoes automated and manual review
+4. **Install from this repo** after merge:
   ```bash
    npx skills add switch-dimension/switch-dimension-skills --skill skill-name
   ```
@@ -111,9 +121,10 @@ npx skills add some-external-user/random-skill
 
 Instead, if you need a third-party skill:
 
-1. Fork or copy the skill into this repository via a Pull Request
-2. The skill will undergo security review
-3. Once merged, install from this repo
+1. Import it with `npm run skills:propose -- skill-name` or `npm run skills:propose -- owner/skill-repo --skill skill-name`
+2. Review the Pull Request opened by the CLI
+3. The skill will undergo security review
+4. Once merged, install from this repo
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for the full process.
 

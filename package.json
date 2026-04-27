@@ -11,6 +11,7 @@
     "skills:list": "node bin/sd-skills.mjs list",
     "skills:info": "node bin/sd-skills.mjs info",
     "skills:install": "node bin/sd-skills.mjs install",
+    "skills:propose": "node bin/sd-skills.mjs propose",
     "lint:skills": "node scripts/lint-skills.mjs"
   },
   "engines": {

@@ -221,12 +221,16 @@ See [SECURITY.md](SECURITY.md) for the full security policy.
 If you want to use a skill from another repository:
 
 1. **Do not install directly** via `npx skills add owner/repo`
-2. **Copy the skill** into this repository via a PR:
-  - Fork/copy the skill directory to `skills/`
-  - Review for security issues
-  - Update frontmatter if needed
-  - Follow all validation steps
-3. **Install from this repo** after merge
+2. **Import the skill** with the CLI:
+  ```bash
+  npm run skills:propose -- skill-name
+  npm run skills:propose -- owner/skill-repo --skill skill-name
+  ```
+  The source can be an installed skill name, a local path, a GitHub `owner/repo`, or a git URL. Use `--skill` when the source repository contains multiple skills.
+  The CLI clones this official repository into a temporary checkout, creates a proposal branch, copies the skill, validates it, commits it, pushes to the official repository when permitted, falls back to the user's fork otherwise, opens a Pull Request, and removes the temporary checkout. Use `--keep-worktree` if you need to inspect the generated checkout.
+  Proposal PR creation requires the GitHub CLI and `gh auth login`.
+3. **Review the Pull Request**, especially helper scripts, network access, and frontmatter.
+4. **Install from this repo** after merge
 
 This ensures all skills pass our security review.
 
