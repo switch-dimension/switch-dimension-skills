@@ -2,6 +2,8 @@
 name: ask-mode
 description: "Conversation-only mode — no code, no tools, just discussion. Use /ask-mode when you want to talk through ideas, ask questions, or have a conceptual discussion without Claude writing or modifying any code."
 user_invocable: true
+metadata:
+  version: "0.1.0"
 ---
 
 # Ask Mode

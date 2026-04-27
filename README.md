@@ -23,21 +23,33 @@ If you want to use a skill from another provider:
 1. **Fork or copy the skill** into this repository via a Pull Request
 2. **Security review** — The skill undergoes automated and manual review
 3. **Install from this repo** after merge:
-   ```bash
+  ```bash
    npx skills add switch-dimension/switch-dimension-skills --skill skill-name
-   ```
+  ```
 
 ### Approved External Skills
 
-| Provider | Skill | Description | Status |
-|----------|-------|-------------|--------|
-| *Submit PR to add external skills* | | | |
+
+| Provider                           | Skill | Description | Status |
+| ---------------------------------- | ----- | ----------- | ------ |
+| *Submit PR to add external skills* |       |             |        |
+
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for the import process.
 
 ## Creating & Sharing Skills
 
 See [SKILLS_WORKFLOW_GUIDE.md](./SKILLS_WORKFLOW_GUIDE.md) for the full workflow on creating, storing, and sharing skills via skills.sh.
+
+## Versioning
+
+`main` is the latest approved skill set. Stable snapshots are published with Git tags and GitHub Releases using Semantic Versioning:
+
+- `major`: breaking changes to skill names, behavior, structure, or installation policy
+- `minor`: new skills or backward-compatible skill capabilities
+- `patch`: docs, CI, security scanning, typo fixes, or small skill corrections
+
+Each skill also declares its own `metadata.version` in `SKILL.md`. Update the per-skill version when that skill's behavior changes. Deprecate skills before removing or renaming them, and document removals in the next major release.
 
 ## Contributing
 
@@ -71,6 +83,7 @@ npx skills add some-external-user/random-skill
 ```
 
 Instead, if you need a third-party skill:
+
 1. Fork or copy the skill into this repository via a Pull Request
 2. The skill will undergo security review
 3. Once merged, install from this repo

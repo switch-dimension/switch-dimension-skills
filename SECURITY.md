@@ -4,7 +4,7 @@ This document outlines the security policy for the Switch Dimension Skills repos
 
 ## Supported Versions
 
-Only skills in the `main` branch of this repository (`switch-dimension/switch-dimension-skills`) are supported and approved for use within the organization.
+Only skills in the `main` branch or tagged releases of this repository (`switch-dimension/switch-dimension-skills`) are supported and approved for use within the organization. `main` is the latest approved skill set; tagged releases are stable snapshots for reproducibility and rollback.
 
 | Version / Source | Supported |
 | ---------------- | --------- |
@@ -12,6 +12,8 @@ Only skills in the `main` branch of this repository (`switch-dimension/switch-di
 | Tagged releases | ✅ Approved |
 | Third-party skill repos | ❌ Not approved without PR review |
 | Local modifications | ❌ Not supported |
+
+Tagged releases follow Semantic Versioning. Breaking skill changes, removals, renames, or policy changes require a major release. New skills and backward-compatible capability additions use minor releases. Documentation, CI, security scanning, typo fixes, and small corrections use patch releases.
 
 ## Skill Installation Policy
 
@@ -72,7 +74,7 @@ If you discover a security vulnerability in any skill or repository configuratio
 
 All changes to this repository undergo automated security scanning:
 
-- **Secret Detection**: Gitleaks scans for committed credentials
+- **Secret Detection**: TruffleHog scans for committed credentials
 - **Static Analysis**: Semgrep checks for dangerous code patterns
 - **Skill Validation**: Custom linting validates SKILL.md format and content
 - **Dependency Review**: Automated checks for vulnerable dependencies
@@ -100,5 +102,5 @@ In the event of a security incident:
 ## Contact
 
 - Security inquiries: security@switchdimension.com
-- Repository owner: @robshocks
+- Repository owner: @robshox
 - General questions: Open an issue (for non-security topics)

@@ -19,15 +19,19 @@ Apply to: `main`
 | Dismiss stale PR approvals when new commits are pushed | ✅ Enabled                              | Ensures fresh review after changes  |
 | Require conversation resolution before merging         | ✅ Enabled                              | All review threads must be resolved |
 | Require status checks to pass before merging           | ✅ Enabled                              | CI must pass                        |
-| Required checks                                        | `secret-scan`, `semgrep`, `skill-lint` | As defined in security.yml          |
+| Required checks                                        | `Secret Detection`, `Static Analysis`, `Skill Validation` | As defined by job names in security.yml |
 | Require branches to be up to date before merging       | ✅ Recommended                          | Prevents conflicts                  |
-| Do not allow bypassing the above settings              | ✅ Recommended                          | Even admins follow rules            |
+| Do not allow bypassing the above settings              | ❌ Disabled                             | Allows the designated owner/admin to bypass when merging their own maintenance PRs |
 | Restrict who can push to matching branches             | Optional                               | Can restrict to specific users      |
 
 
 ### Save the rule
 
 Click "Create" or "Save changes" to apply.
+
+### Admin/Owner Bypass
+
+GitHub does not allow pull request authors to approve their own PRs. For owner-authored maintenance changes, configure a bypass allowance for the designated owner (`@robshox`) so they can merge after required checks pass while keeping review requirements active for contributor PRs.
 
 ## 2. Code Security Settings
 
