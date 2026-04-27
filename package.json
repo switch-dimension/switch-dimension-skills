@@ -1,0 +1,19 @@
+{
+  "name": "@switch-dimension/skills",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Switch Dimension approved agent skills and helper CLI.",
+  "type": "module",
+  "bin": {
+    "sd-skills": "bin/sd-skills.mjs"
+  },
+  "scripts": {
+    "skills:list": "node bin/sd-skills.mjs list",
+    "skills:info": "node bin/sd-skills.mjs info",
+    "skills:install": "node bin/sd-skills.mjs install",
+    "lint:skills": "node scripts/lint-skills.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -14,6 +14,8 @@ Thank you for contributing to the Switch Dimension Skills repository. This guide
 
 ```
 switch-dimension-skills/
+├── bin/
+│   └── sd-skills.mjs          # Company skills discovery/install CLI
 ├── skills/                    # All skills live here
 │   ├── skill-name/
 │   │   ├── SKILL.md          # Required: Skill definition
@@ -26,6 +28,7 @@ switch-dimension-skills/
 │   └── pull_request_template.md
 ├── scripts/
 │   └── lint-skills.mjs       # Local validation script
+├── package.json               # npm scripts and CLI bin metadata
 ├── README.md                  # Main documentation
 ├── SECURITY.md               # Security policy
 └── CONTRIBUTING.md           # This file
