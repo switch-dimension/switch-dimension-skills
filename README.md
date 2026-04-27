@@ -27,3 +27,64 @@ npx skills add [https://github.com/clerk/skills](https://github.com/clerk/skills
 ## Creating & Sharing Skills
 
 See [SKILLS_WORKFLOW_GUIDE.md](./SKILLS_WORKFLOW_GUIDE.md) for the full workflow on creating, storing, and sharing skills via skills.sh.
+
+## Contributing
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines on submitting new skills, the PR process, and security requirements.
+
+## Security
+
+See [SECURITY.md](./SECURITY.md) for the full security policy, vulnerability reporting process, and skill installation guidelines.
+
+---
+
+## Skill Installation Policy
+
+**For all team members**: This repository is the single source of truth for approved skills. To maintain security and consistency:
+
+### Approved Installation Source
+
+Install skills **only** from this repository:
+
+```bash
+npx skills add switch-dimension/switch-dimension-skills
+```
+
+### Third-Party Skills
+
+Do **not** install skills directly from external repositories:
+
+```bash
+# DON'T DO THIS
+npx skills add some-external-user/random-skill
+```
+
+Instead, if you need a third-party skill:
+1. Fork or copy the skill into this repository via a Pull Request
+2. The skill will undergo security review
+3. Once merged, install from this repo
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for the full process.
+
+### Verification
+
+After installing, verify the source in your project's `skills-lock.json`:
+
+```json
+{
+  "skills": {
+    "skill-name": {
+      "source": "switch-dimension/switch-dimension-skills",
+      "sourceType": "github"
+    }
+  }
+}
+```
+
+If the `source` field points to any other repository, do not use that skill and report it to the repository owner.
+
+### Need a New Skill?
+
+1. Check if it already exists in this repository
+2. If not, propose it via a Pull Request (see [CONTRIBUTING.md](./CONTRIBUTING.md))
+3. The designated owner will review and merge approved skills
