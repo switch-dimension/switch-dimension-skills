@@ -108,10 +108,10 @@ Suggested severity labels:
 
 ## Approval Checklist
 
-- [ ] Structure and metadata are valid.
-- [ ] Description is discoverable and scoped.
-- [ ] Instructions are actionable and concise.
-- [ ] Safety risks are addressed.
-- [ ] Helper scripts and linked files are reviewed.
-- [ ] Skill does not duplicate existing functionality unnecessarily.
-- [ ] Validation command passes or failures are understood.
+- Structure and metadata are valid.
+- Description is discoverable and scoped.
+- Instructions are actionable and concise.
+- Safety risks are addressed.
+- Helper scripts and linked files are reviewed.
+- Skill does not duplicate existing functionality unnecessarily.
+- Validation command passes or failures are understood.
