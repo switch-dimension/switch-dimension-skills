@@ -8,6 +8,31 @@ A collection of agent skills for [skills.sh](https://skills.sh)—reusable capab
 npx skills add switch-dimension/switch-dimension-skills
 ```
 
+## Company Skills CLI
+
+Use the in-repo CLI to discover and install approved company skills:
+
+```bash
+npm run skills:list
+npm run skills:info -- project-log
+npm run skills:install -- project-log
+```
+
+The CLI supports private repositories through the GitHub CLI when reading remote metadata:
+
+```bash
+gh auth login
+npm run skills:list -- --remote
+```
+
+Available commands:
+
+- `sd-skills list` — list approved skills with version and description
+- `sd-skills info <skill>` — show details for one skill
+- `sd-skills install <skill>` — install one approved skill with `npx skills`
+- `sd-skills install --all` — install every approved skill
+- `sd-skills install <skill> --dry-run` — print the install command without running it
+
 ## Available Skills
 
 - **project-log** — Ensures a `.docs` folder exists, creates `project-log.md`, and records current project status for handoff. Use when ending a session, handing off, or saving project state.

@@ -6,12 +6,14 @@ This document outlines the security policy for the Switch Dimension Skills repos
 
 Only skills in the `main` branch or tagged releases of this repository (`switch-dimension/switch-dimension-skills`) are supported and approved for use within the organization. `main` is the latest approved skill set; tagged releases are stable snapshots for reproducibility and rollback.
 
+
 | Version / Source        | Supported                        |
 | ----------------------- | -------------------------------- |
 | `main` branch (latest)  | ✅ Approved                       |
 | Tagged releases         | ✅ Approved                       |
 | Third-party skill repos | ❌ Not approved without PR review |
 | Local modifications     | ❌ Not supported                  |
+
 
 Tagged releases follow Semantic Versioning. Breaking skill changes, removals, renames, or policy changes require a major release. New skills and backward-compatible capability additions use minor releases. Documentation, CI, security scanning, typo fixes, and small corrections use patch releases.
 
@@ -20,16 +22,16 @@ Tagged releases follow Semantic Versioning. Breaking skill changes, removals, re
 To maintain security and consistency across the organization:
 
 1. **Only install skills from this repository**. Use:
-   ```bash
+  ```bash
    npx skills add switch-dimension/switch-dimension-skills
-   ```
+  ```
 2. **Do not install skills directly from external repositories**. If a third-party skill is needed:
-   - Fork or copy the skill into this repository via a Pull Request
-   - The skill must pass security review before merging
-   - Once merged, install from this repo
+  - Fork or copy the skill into this repository via a Pull Request
+  - The skill must pass security review before merging
+  - Once merged, install from this repo
 3. **Verify the source** after installation by checking `skills-lock.json`:
-   - The `source` field should be `switch-dimension/switch-dimension-skills`
-   - The `sourceType` should be `github`
+  - The `source` field should be `switch-dimension/switch-dimension-skills`
+  - The `sourceType` should be `github`
 4. **Pin to specific commits** when possible to ensure reproducibility.
 
 ## Reporting Security Vulnerabilities
@@ -46,12 +48,13 @@ If you discover a security vulnerability in any skill or repository configuratio
 
 1. **Email security concerns to**: [security@switchdimension.com](mailto:security@switchdimension.com)
 2. **Include**:
-   - Description of the vulnerability
-   - Steps to reproduce (if applicable)
-   - Potential impact assessment
-   - Any suggested remediation
+  - Description of the vulnerability
+  - Steps to reproduce (if applicable)
+  - Potential impact assessment
+  - Any suggested remediation
 
 ### Response Timeline
+
 
 | Severity | Acknowledgment | Initial Assessment | Resolution Target |
 | -------- | -------------- | ------------------ | ----------------- |
@@ -59,6 +62,7 @@ If you discover a security vulnerability in any skill or repository configuratio
 | High     | 48 hours       | 72 hours           | 14 days           |
 | Medium   | 72 hours       | 1 week             | 30 days           |
 | Low      | 1 week         | 2 weeks            | 90 days           |
+
 
 ### Security Advisory Process
 
