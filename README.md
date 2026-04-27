@@ -16,13 +16,13 @@ npx skills add switch-dimension/switch-dimension-skills
 
 Skills from other providers that complement this collection:
 
-| Provider | Skill | Description |
-|----------|-------|-------------|
-| *Add skills as you discover useful ones* | | |
+
+| Provider                                 | Skill | Description |
+| ---------------------------------------- | ----- | ----------- |
+| *Add skills as you discover useful ones* |       |             |
 
 
-npx skills add https://github.com/clerk/skills --skill clerk-nextjs-patterns 
-
+npx skills add [https://github.com/clerk/skills](https://github.com/clerk/skills) --skill clerk-nextjs-patterns 
 
 ## Creating & Sharing Skills
 
