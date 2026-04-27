@@ -10,18 +10,20 @@ Apply to: `main`
 
 ### Protection Settings
 
-| Setting | Value | Notes |
-|---------|-------|-------|
-| Require a pull request before merging | ✅ Enabled | All changes must go through PR |
-| Require approvals | 1 | Minimum 1 approval required |
-| Require review from Code Owners | ✅ Enabled | Enforces CODEOWNERS file |
-| Dismiss stale PR approvals when new commits are pushed | ✅ Enabled | Ensures fresh review after changes |
-| Require conversation resolution before merging | ✅ Enabled | All review threads must be resolved |
-| Require status checks to pass before merging | ✅ Enabled | CI must pass |
-| Required checks | `secret-scan`, `semgrep`, `skill-lint` | As defined in security.yml |
-| Require branches to be up to date before merging | ✅ Recommended | Prevents conflicts |
-| Do not allow bypassing the above settings | ✅ Recommended | Even admins follow rules |
-| Restrict who can push to matching branches | Optional | Can restrict to specific users |
+
+| Setting                                                | Value                                  | Notes                               |
+| ------------------------------------------------------ | -------------------------------------- | ----------------------------------- |
+| Require a pull request before merging                  | ✅ Enabled                              | All changes must go through PR      |
+| Require approvals                                      | 1                                      | Minimum 1 approval required         |
+| Require review from Code Owners                        | ✅ Enabled                              | Enforces CODEOWNERS file            |
+| Dismiss stale PR approvals when new commits are pushed | ✅ Enabled                              | Ensures fresh review after changes  |
+| Require conversation resolution before merging         | ✅ Enabled                              | All review threads must be resolved |
+| Require status checks to pass before merging           | ✅ Enabled                              | CI must pass                        |
+| Required checks                                        | `secret-scan`, `semgrep`, `skill-lint` | As defined in security.yml          |
+| Require branches to be up to date before merging       | ✅ Recommended                          | Prevents conflicts                  |
+| Do not allow bypassing the above settings              | ✅ Recommended                          | Even admins follow rules            |
+| Restrict who can push to matching branches             | Optional                               | Can restrict to specific users      |
+
 
 ### Save the rule
 
@@ -94,12 +96,12 @@ Navigate to: **Settings -> Environments**
 
 After completing setup, verify:
 
-- [ ] Branch protection rule is active on `main`
-- [ ] Secret scanning is enabled
-- [ ] Push protection is enabled
-- [ ] Dependabot alerts are enabled
-- [ ] CODEOWNERS file is recognized (check it shows up in file browser with shield icon)
-- [ ] Create a test PR to ensure CI checks run and owner review is required
+- Branch protection rule is active on `main`
+- Secret scanning is enabled
+- Push protection is enabled
+- Dependabot alerts are enabled
+- CODEOWNERS file is recognized (check it shows up in file browser with shield icon)
+- Create a test PR to ensure CI checks run and owner review is required
 
 ## Maintenance
 
@@ -119,5 +121,7 @@ After completing setup, verify:
 ## Questions
 
 For issues with these settings:
-- GitHub Docs: https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches
-- GitHub Security: https://docs.github.com/en/code-security
+
+- GitHub Docs: [https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches)
+- GitHub Security: [https://docs.github.com/en/code-security](https://docs.github.com/en/code-security)
+
