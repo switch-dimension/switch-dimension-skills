@@ -1,0 +1,21 @@
+# CODEOWNERS - Single designated owner for all changes
+# This file gates all merges to the main branch via branch protection rules.
+# Update the username below to the GitHub handle of the designated owner.
+
+# Global fallback - all files require review from the designated owner
+* @robshocks
+
+# Skills directory - all skill additions/modifications
+/skills/ @robshocks
+
+# GitHub configuration changes (workflows, templates, etc.)
+/.github/ @robshocks
+
+# Scripts used for CI/security scanning
+/scripts/ @robshocks
+
+# Documentation and policy files
+/SECURITY.md @robshocks
+/CONTRIBUTING.md @robshocks
+/README.md @robshocks
+/SKILLS_WORKFLOW_GUIDE.md @robshocks

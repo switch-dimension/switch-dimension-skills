@@ -1,5 +1,5 @@
 ---
-name: smoke-test
+name: test-app
 description: Starts the dev server, opens the browser, and tests recent changes end-to-end. Use this skill whenever the user says things like "test my changes", "check if this works", "run and test", "smoke test", "verify the app", "open the browser and test", "make sure it works", "test the UI", "check for errors", or asks you to visually verify, click through flows, or check console logs after making code changes. Also trigger when the user wants to see their app running and validated in the browser, even if they don't say "test" explicitly — phrases like "does it look right?", "spin it up and check", or "try it out" count too.
 metadata:
   author: switch-dimension
