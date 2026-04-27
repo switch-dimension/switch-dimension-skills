@@ -36,6 +36,8 @@ Available commands:
 ## Available Skills
 
 - **project-log** — Ensures a `.docs` folder exists, creates `project-log.md`, and records current project status for handoff. Use when ending a session, handing off, or saving project state.
+- **skill-review** — Reviews new or modified agent skills for quality, safety, discoverability, structure, and repository best practices.
+- **update-docs** — Reviews project changes and updates documentation to match current behavior, setup, governance, security, and usage best practices.
 
 ## Third-Party Skills
 

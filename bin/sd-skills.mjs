@@ -22,6 +22,8 @@ Options:
   --json       Print machine-readable JSON for list/info.
   --remote     Read skill metadata through GitHub CLI instead of local files.
   --dry-run    Print install command(s) without running them.
+  --color      Force colored output.
+  --no-color   Disable colored output.
   -h, --help   Show this help.
 
 Examples:
@@ -43,6 +45,18 @@ function fail(message, exitCode = 1) {
 
 function hasFlag(flag) {
   return args.includes(flag);
+}
+
+function color(value, code) {
+  if (!shouldColor()) return value;
+  return `\u001b[${code}m${value}\u001b[0m`;
+}
+
+function shouldColor() {
+  if (hasFlag('--no-color')) return false;
+  if (hasFlag('--color') || process.env.FORCE_COLOR) return true;
+  if (process.env.NO_COLOR) return false;
+  return Boolean(process.stdout.isTTY);
 }
 
 function stripFlags(values) {
@@ -166,13 +180,7 @@ function printSkills(skills) {
     return;
   }
 
-  const rows = skills.map(skill => ({
-    name: skill.name,
-    version: skill.version || '-',
-    description: summarize(skill.description, 100),
-  }));
-
-  printTable(rows, ['name', 'version', 'description']);
+  printSkillList(skills);
 }
 
 function printSkill(skill) {
@@ -181,35 +189,72 @@ function printSkill(skill) {
     return;
   }
 
-  console.log(`${skill.name}@${skill.version || 'unknown'}`);
+  console.log(`${color(skill.name, '36;1')}@${color(skill.version || 'unknown', '32')}`);
   console.log('');
   console.log(skill.description || 'No description provided.');
 }
 
-function printTable(rows, columns) {
-  if (rows.length === 0) {
+function printSkillList(skills) {
+  if (skills.length === 0) {
     console.log('No skills found.');
     return;
   }
 
-  const widths = Object.fromEntries(
-    columns.map(column => [
-      column,
-      Math.max(column.length, ...rows.map(row => String(row[column] ?? '').length)),
-    ])
+  const nameWidth = Math.max('Skill'.length, ...skills.map(skill => skill.name.length));
+  const versionWidth = Math.max('Version'.length, ...skills.map(skill => (skill.version || '-').length));
+  const terminalWidth = process.stdout.columns || Number(process.env.COLUMNS) || 100;
+  const gapWidth = 4;
+  const descriptionWidth = Math.max(
+    30,
+    terminalWidth - nameWidth - versionWidth - gapWidth
   );
 
-  console.log(columns.map(column => column.padEnd(widths[column])).join('  '));
-  console.log(columns.map(column => '-'.repeat(widths[column])).join('  '));
+  console.log('');
+  console.log(
+    `${color('Skill'.padEnd(nameWidth), '36;1')}  ${color('Version'.padEnd(versionWidth), '32;1')}  ${color('Description', '1')}`
+  );
+  console.log(color(`${'-'.repeat(nameWidth)}  ${'-'.repeat(versionWidth)}  ${'-'.repeat(descriptionWidth)}`, '90'));
 
-  for (const row of rows) {
-    console.log(columns.map(column => String(row[column] ?? '').padEnd(widths[column])).join('  '));
+  for (const skill of skills) {
+    const descriptionLines = wrapText(skill.description || 'No description provided.', descriptionWidth);
+    const firstDescription = descriptionLines.shift() || '';
+
+    console.log(
+      `${color(skill.name.padEnd(nameWidth), '36')}  ${color((skill.version || '-').padEnd(versionWidth), '32')}  ${firstDescription}`
+    );
+
+    for (const line of descriptionLines) {
+      console.log(`${''.padEnd(nameWidth)}  ${''.padEnd(versionWidth)}  ${line}`);
+    }
   }
 }
 
-function summarize(value, maxLength) {
-  if (!value || value.length <= maxLength) return value || '';
-  return `${value.slice(0, maxLength - 3)}...`;
+function wrapText(value, width) {
+  const words = value.split(/\s+/).filter(Boolean);
+  const lines = [];
+  let line = '';
+
+  for (const word of words) {
+    if (word.length > width) {
+      if (line) {
+        lines.push(line);
+        line = '';
+      }
+      lines.push(word);
+      continue;
+    }
+
+    const nextLine = line ? `${line} ${word}` : word;
+    if (nextLine.length > width) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = nextLine;
+    }
+  }
+
+  if (line) lines.push(line);
+  return lines;
 }
 
 function installSkills(skillNames) {
@@ -217,7 +262,7 @@ function installSkills(skillNames) {
 
   for (const skillName of skillNames) {
     const command = ['npx', 'skills', 'add', COMPANY_REPO, '--skill', skillName];
-    console.log(command.join(' '));
+    console.log(color(command.join(' '), '36'));
 
     if (dryRun) continue;
 
