@@ -43,6 +43,8 @@ const SECRET_PATTERNS = [
   /gh[pousr]_[A-Za-z0-9_]{36,}/, // GitHub token
 ];
 
+const SEMVER_PATTERN = /^\d+\.\d+\.\d+$/;
+
 let exitCode = EXIT_SUCCESS;
 const errors = [];
 const warnings = [];
@@ -155,6 +157,14 @@ function validateSkill(skillDir) {
     if (frontmatter.description.length < 20) {
       reportWarning(`${skillPath}: Description seems too short, consider adding trigger terms`);
     }
+  }
+
+  if (!frontmatter.version) {
+    reportError(`${skillPath}: Missing required field 'metadata.version' in frontmatter`);
+  } else if (!SEMVER_PATTERN.test(frontmatter.version)) {
+    reportError(
+      `${skillPath}: metadata.version must use SemVer format like "1.0.0"`
+    );
   }
 
   // Check for scripts directory and validate any scripts

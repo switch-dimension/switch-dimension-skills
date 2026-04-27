@@ -19,6 +19,7 @@ Brief description of the changes and motivation.
 
 ### SKILL.md Validation
 - [ ] `SKILL.md` has valid YAML frontmatter with `name` and `description` fields
+- [ ] `SKILL.md` includes `metadata.version` using SemVer
 - [ ] Directory name matches the frontmatter `name` (kebab-case)
 - [ ] Description is written in third person ("Processes files" not "I can help")
 - [ ] Description includes trigger terms for when the agent should use this skill

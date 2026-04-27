@@ -99,7 +99,7 @@ Each skill **must** have a `SKILL.md` file with YAML frontmatter and markdown bo
 name: skill-name                 # kebab-case, matches directory name
 description: Brief description of what this skill does and when to use it. Be specific—include trigger terms. Write in third person.
 license: MIT                     # Optional
-metadata:                        # Optional
+metadata:
   author: your-name
   version: "1.0.0"
 ---
@@ -118,6 +118,13 @@ Concrete usage examples.
 - **Third person**: "Processes Excel files" not "I can help with Excel"
 - **Include triggers**: "Use when working with PDFs, forms, or document extraction"
 - **WHAT + WHEN**: What the skill does + when the agent should apply it
+
+### Versioning best practices
+
+- Include `metadata.version` in every skill and use SemVer, for example `"1.0.0"`.
+- Bump the per-skill version when the skill behavior changes.
+- Use patch versions for small fixes, minor versions for backward-compatible capability additions, and major versions for breaking behavior changes.
+- Deprecate skills before removing or renaming them, and include migration notes in release notes.
 
 ---
 
@@ -244,5 +251,6 @@ This repository uses a security-first approach:
 - **Branch protection** — No direct pushes to `main`; all changes via PR
 - **Automated security scanning** — Every PR is checked for secrets and unsafe patterns
 - **Skill validation** — Automated linting ensures SKILL.md format compliance
+- **Versioned releases** — `main` is latest approved, while SemVer tags provide stable snapshots
 
 See the linked documents above for full details.
